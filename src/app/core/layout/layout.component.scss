@@ -1,0 +1,28 @@
+@import '../../shared/themes/index.scss';
+
+.main-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.content {
+  width: 100%;
+}
+
+.logo-container {
+  width: 250px;
+  height: 65px;
+  background-color: $side-nav-color;
+  color: $color-main-1;
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  padding-left: 10px;
+  margin-right: 5px;
+}
+

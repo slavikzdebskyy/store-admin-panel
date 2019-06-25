@@ -4,14 +4,25 @@
         "directive-selector": [
             true,
             "attribute",
-            "app",
+            "admin",
             "camelCase"
         ],
         "component-selector": [
             true,
             "element",
-            "app",
+            "admin",
             "kebab-case"
-        ]
+        ],
+        "no-console": [
+          true,
+          "log",
+          "debug",
+          "info",
+          "time",
+          "timeEnd",
+          "trace"
+        ],
+        "no-shadowed-variable": true,
+        "no-string-literal": false,
     }
 }

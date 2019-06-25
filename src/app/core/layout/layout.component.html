@@ -1,0 +1,33 @@
+<!-- <div class="main-wraper">
+
+    <admin-side-nav></admin-side-nav>
+    <router-outlet></router-outlet>
+</div> -->
+<mat-sidenav-container class="main-container" >
+    <mat-sidenav
+    class="side-nav"
+    #sidenav
+    mode="side"
+    [(opened)]="isSideNavOpened"
+    >
+      <div class="logo-container">
+        <img
+          src="../../../assets/img/logo-icon.png"
+          alt=""
+          class="logo-img">
+          <h2 class="title-2">
+            Dashboard
+          </h2>
+      </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content
+    class="content">
+      <!-- <p><button mat-button (click)="sidenav.toggle()">sidenav.toggle()</button></p> -->
+      <admin-header
+      (sideNavEmit)="toggleSideBar($event)"
+      >
+      </admin-header>
+
+    </mat-sidenav-content>
+  </mat-sidenav-container>
