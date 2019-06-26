@@ -3,13 +3,24 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 // Modules
-import { Constants } from '../shared/constants/constants.module';
+import { Constants } from '../modules/constants/constants.module';
 
 //  Components
 import { LayoutComponent } from './layout/layout.component';
+import { SideNavComponent } from '../shared/side-nav/side-nav.component';
 
 const routes: Routes = [
-
+  {
+    path: Constants.ROUTERS.MAIN,
+    component: LayoutComponent,
+    data: { title: 'Dashboard' },
+    // children: [
+    //   {
+    //     path: ,
+    //     component: ,
+    //   }
+    // ]
+  },
 ];
 
 @NgModule({
@@ -20,4 +31,4 @@ const routes: Routes = [
   declarations: [],
   exports: [RouterModule]
 })
-export class AdminRoutingModule { }
+export class CoreRoutingModule { }

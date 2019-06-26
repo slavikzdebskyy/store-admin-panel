@@ -2,11 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 
-  //components
+  // Components
 import { AdminComponent } from './admin.component';
 
-  // modules
+  // Modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './modules/material/material.module';
 import { AdminRoutingModule } from './admin-routing.module';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
@@ -19,11 +20,12 @@ import { CoreModule } from './core/core.module';
   imports: [
 
   BrowserModule,
-    SharedModule,
     CoreModule,
+    SharedModule,
     RouterModule,
     AdminRoutingModule,
     BrowserAnimationsModule,
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AdminComponent],

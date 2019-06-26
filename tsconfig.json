@@ -17,6 +17,9 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@admin-panel/themes": ["src/app/modules/themes/index.scss"],
+    }
   }
 }

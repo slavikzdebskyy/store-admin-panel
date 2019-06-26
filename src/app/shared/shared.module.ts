@@ -1,17 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-  // modules
-import { MaterialModule } from './material/material.module';
-import { Constants } from './constants/constants.module';
+ // Components
+import { SideNavComponent } from './side-nav/side-nav.component';
+
+const COMPONENTS = [
+  SideNavComponent,
+];
 
 @NgModule({
   imports: [
     CommonModule,
-    MaterialModule,
-    Constants,
   ],
-  declarations: [],
-  exports: [MaterialModule],
+  declarations: [
+    ...COMPONENTS,
+  ],
+  exports: [
+    ...COMPONENTS,
+  ],
 })
 export class SharedModule { }

@@ -5,13 +5,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 
 const MODULES = [
+  BrowserAnimationsModule,
   MatSidenavModule,
 ];
 
 @NgModule({
   imports: [
     CommonModule,
-    BrowserAnimationsModule,
    ...MODULES,
   ],
   declarations: [],

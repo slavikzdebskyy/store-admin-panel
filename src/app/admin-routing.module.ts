@@ -3,16 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 // Modules
-import { Constants } from './shared/constants/constants.module';
-
-//  Components
-import { LayoutComponent } from './core/layout/layout.component';
+import { Constants } from './modules/constants/constants.module';
 
 const routes: Routes = [
   {
     path: Constants.ROUTERS.MAIN,
-    component: LayoutComponent,
-    data: { title: 'Dashboard' },
+    loadChildren: './core/core.module#CoreModule'
   },
   {
     path: '**',
