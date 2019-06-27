@@ -7,13 +7,13 @@ import { Constants } from '../modules/constants/constants.module';
 
 //  Components
 import { LayoutComponent } from './layout/layout.component';
-import { SideNavComponent } from '../shared/side-nav/side-nav.component';
+import { AuthGuard } from '../auth/auth.guard';
 
 const routes: Routes = [
   {
-    path: Constants.ROUTERS.MAIN,
+    path: Constants.ROUTERS.HOME,
     component: LayoutComponent,
-    data: { title: 'Dashboard' },
+    data: { title: 'Dashboard | Home' },
     // children: [
     //   {
     //     path: ,

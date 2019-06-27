@@ -10,6 +10,12 @@ import { CommonModule } from '@angular/common';
 export class Constants {
 
   public static readonly ROUTERS = {
-    MAIN: '',
+    HOME: '',
+    LOGIN: 'login',
+    REGISTRATION: 'registration'
+  }
+
+  public static readonly STORAGE_KEYS ={
+    ADMIN_KEY: 'admin_token',
   }
  }
