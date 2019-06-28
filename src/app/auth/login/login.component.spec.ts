@@ -1,7 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LoginComponent } from './login.component';
-import { FormsModule, FormGroup, FormControl } from '@angular/forms';
+import { FormsModule, FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -10,7 +11,11 @@ describe('LoginComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ LoginComponent ],
-      imports: [FormsModule],
+      schemas: [NO_ERRORS_SCHEMA],
+      imports: [
+        FormsModule,
+        ReactiveFormsModule
+      ],
     })
     .compileComponents();
   }));
@@ -19,10 +24,6 @@ describe('LoginComponent', () => {
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    component.loginForm = new FormGroup({
-      login: new FormControl(''),
-      password: new FormControl(''),
-    })
   }));
 
   it('should create', () => {
