@@ -1,4 +1,4 @@
-@import '../../modules/themes/variables';
+@import '../modules/themes/variables';
 
 .login-container {
   width: 100%;
@@ -15,6 +15,7 @@
 }
 .title-container {
   width: 100%;
+  padding-bottom: 30px;
 }
 
 .logo {

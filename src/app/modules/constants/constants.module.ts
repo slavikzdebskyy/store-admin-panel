@@ -12,7 +12,7 @@ export class Constants {
   public static readonly ROUTERS = {
     HOME: '',
     LOGIN: 'login',
-    REGISTRATION: 'registration'
+    RESET_PASS: 'reset-password'
   }
 
   public static readonly STORAGE_KEYS ={

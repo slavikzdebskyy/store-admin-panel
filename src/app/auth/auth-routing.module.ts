@@ -4,6 +4,9 @@ import { NgModule } from '@angular/core';
 
 // Modules
 import { Constants } from 'src/app/modules/constants/constants.module';
+
+// Components
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
@@ -12,9 +15,11 @@ const routes: Routes = [
     component: LoginComponent,
     data: {title: 'Dashboard | Login'}
   },
-  // {
-  //   path: Constants.ROUTERS.REGISTRATION,
-  // },
+  {
+    path: Constants.ROUTERS.RESET_PASS,
+    component: ResetPasswordComponent,
+    data: {title: 'Dashboard | Reset password'}
+  },
 ];
 
 @NgModule({
