@@ -1,0 +1,53 @@
+<div class="login-container flex-center-center">
+  <form
+    class="login-form col-spc-btwn-cntr"
+    [formGroup]="loginForm">
+    <div class="input-wrapper">
+      <div class="flex-center-center title-container">
+        <img src="../../../assets/img/logo-icon.png" class="logo">
+        <h3 class="title-3">
+          Dashboard Admin
+        </h3>
+      </div>
+      <div class="inputs">
+        <mat-form-field  class="form-field" color="accent">
+          <input matInput placeholder="Login" formControlName="login">
+          <mat-error *ngIf="!loginForm.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field  class="form-field" >
+            <input
+              matInput
+              placeholder="Password"
+              formControlName="password"
+              [type]="hide ? 'password' : 'text'">
+            <button
+              mat-icon-button matSuffix
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+                <mat-icon>
+                  {{hide ? 'visibility_off' : 'visibility'}}
+                </mat-icon>
+            </button>
+            <mat-error *ngIf="!loginForm.hasError('required')">
+              Please enter a valid email address
+            </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row-spc-btwn-cntr btn-container">
+        <button
+          mat-button
+          color="accent">
+            Forgot your password?
+        </button>
+        <button
+        mat-raised-button
+        color="accent">
+            Login
+        </button>
+    </div>
+  </form>
+</div>
