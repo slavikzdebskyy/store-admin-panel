@@ -9,10 +9,8 @@ import { AdminComponent } from './admin.component';
 
   // Modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './modules/material/material.module';
 import { AdminRoutingModule } from './admin-routing.module';
 import { SharedModule } from './shared/shared.module';
-
 
 @NgModule({
   declarations: [
@@ -23,8 +21,7 @@ import { SharedModule } from './shared/shared.module';
     SharedModule,
     RouterModule,
     AdminRoutingModule,
-    BrowserAnimationsModule,
-    MaterialModule,
+    BrowserAnimationsModule
   ],
   providers: [AuthGuard],
   bootstrap: [AdminComponent],
