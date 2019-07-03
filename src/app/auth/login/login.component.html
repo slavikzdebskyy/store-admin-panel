@@ -11,8 +11,8 @@
       </div>
       <div class="inputs">
         <mat-form-field  class="form-field" color="accent">
-          <input matInput placeholder="Login" formControlName="login">
-          <mat-error *ngIf="!loginForm.hasError('required')">
+          <input matInput placeholder="Email" formControlName="email">
+          <mat-error *ngIf="!loginForm.hasError('required') && loginForm.hasError('email')">
             Please enter a valid email address
           </mat-error>
         </mat-form-field>
@@ -32,7 +32,7 @@
                 </mat-icon>
             </button>
             <mat-error *ngIf="!loginForm.hasError('required')">
-              Please enter a valid email address
+              Password is required
             </mat-error>
         </mat-form-field>
       </div>

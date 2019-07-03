@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     private authService: AuthService
     ) {
     this.loginForm = this.formBuilder.group({
-      login: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
     });
   }
@@ -31,12 +31,14 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.subs.unsubscribe();
   }
 
-  public onLogin(): void {console.log('test')
+  public onLogin(): void {
     this.subs.add(
-      this.authService.login().subscribe(res => {
-        console.log(res);
-      })
+      this.authService
+        .login(this.loginForm.getRawValue())
+        .subscribe(
+          res => console.log(res),
+          err => console.log(err.error.message)
+        )
     )
-
   }
 }

@@ -10,6 +10,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 // Components
 import { HeaderComponent } from './layout/header/header.component';
 import { LayoutComponent } from './layout/layout.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtService } from '../services/jwt.service';
 
 @NgModule({
   imports: [
@@ -23,6 +25,7 @@ import { LayoutComponent } from './layout/layout.component';
   declarations: [
     LayoutComponent,
     HeaderComponent,
-  ]
+  ],
+
 })
 export class CoreModule { }
