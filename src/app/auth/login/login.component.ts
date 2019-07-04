@@ -1,7 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { Subscription } from 'rxjs';
+import { Constants } from 'src/app/modules/constants/constants.module';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'admin-login',
@@ -13,11 +15,13 @@ export class LoginComponent implements OnInit, OnDestroy {
   public loginForm: FormGroup;
   public hide = true;
 
+  private readonly STORAGE_KEYS = Constants.STORAGE_KEYS;
   private subs: Subscription = new Subscription();
 
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router,
     ) {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -36,7 +40,10 @@ export class LoginComponent implements OnInit, OnDestroy {
       this.authService
         .login(this.loginForm.getRawValue())
         .subscribe(
-          res => console.log(res),
+          res => {
+            localStorage.setItem(this.STORAGE_KEYS.ADMIN_KEY, res.token);
+            this.router.navigate([Constants.ROUTERS.HOME]);
+          },
           err => console.log(err.error.message)
         )
     )
