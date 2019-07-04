@@ -23,6 +23,7 @@ import { LayoutComponent } from './layout/layout.component';
   declarations: [
     LayoutComponent,
     HeaderComponent,
-  ]
+  ],
+
 })
 export class CoreModule { }

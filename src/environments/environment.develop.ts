@@ -1,5 +1,8 @@
+import { base } from "./environment.base";
+
+
 export const environment = {
+  ...base,
   env: 'develop',
-  version: '0.1.0',
   production: false,
 };

@@ -1,8 +1,15 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LoginComponent } from './login.component';
-import { FormsModule, FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
+import { RouterTestingModule } from '@angular/router/testing';
+import { of } from 'rxjs';
+
+class AuthServiceMock {
+  public login() { return of({}); }
+}
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -14,7 +21,11 @@ describe('LoginComponent', () => {
       schemas: [NO_ERRORS_SCHEMA],
       imports: [
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        RouterTestingModule,
+      ],
+      providers: [
+        { provide: AuthService, useClass: AuthServiceMock },
       ],
     })
     .compileComponents();
