@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { Subscription } from 'rxjs';
@@ -8,15 +8,14 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'admin-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements OnInit, OnDestroy {
+export class LoginComponent implements OnDestroy {
 
   public loginForm: FormGroup;
   public hide = true;
-
-  private readonly STORAGE_KEYS = Constants.STORAGE_KEYS;
   private subs: Subscription = new Subscription();
+  private readonly STORAGE_KEYS = Constants.STORAGE_KEYS;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -28,8 +27,6 @@ export class LoginComponent implements OnInit, OnDestroy {
       password: ['', Validators.required],
     });
   }
-
-  ngOnInit() {}
 
   ngOnDestroy() {
     this.subs.unsubscribe();
@@ -44,7 +41,7 @@ export class LoginComponent implements OnInit, OnDestroy {
             localStorage.setItem(this.STORAGE_KEYS.ADMIN_KEY, res.token);
             this.router.navigate([Constants.ROUTERS.HOME]);
           },
-          err => console.log(err.error.message)
+          err => console.log(err.error.message) // TODO implment toastr service
         )
     )
   }

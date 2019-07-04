@@ -6,14 +6,13 @@ import { ILoginRequest } from '../shared/interfaces/login-request.interface';
 
 @Injectable()
 export class AuthService {
+
   private serverApiUrl: string = environment.serverApiUrl;
-
-
 
   constructor(private httpClient: HttpClient) {}
 
   public login(body: ILoginRequest): Observable<any> {
-    return this.httpClient.post<any>(`${this.serverApiUrl}/administrators/login-admin`, body)
+    return this.httpClient.post<any>(`${this.serverApiUrl}`, body)
   }
 
 }
