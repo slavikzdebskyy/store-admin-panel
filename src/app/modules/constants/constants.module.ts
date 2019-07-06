@@ -9,6 +9,8 @@ import { CommonModule } from '@angular/common';
 })
 export class Constants {
 
+  public static readonly DEAFAULT_LANGUAGE = 'en';
+
   public static readonly ROUTERS = {
     HOME: '',
     LOGIN: 'login',

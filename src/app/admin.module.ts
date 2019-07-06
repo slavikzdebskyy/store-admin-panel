@@ -1,3 +1,6 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -8,14 +11,17 @@ import { AuthGuard } from './auth/auth.guard';
 import { AdminComponent } from './admin.component';
 
   // Modules
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { AdminRoutingModule } from './admin-routing.module';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 
 // Services
 import { AuthService } from './services/auth.service';
 import { JwtService } from './services/jwt.service';
+
+export function httpLoaderFactory(httpClient: HttpClient) {
+  return new TranslateHttpLoader(httpClient);
+}
 
 @NgModule({
   declarations: [
@@ -28,6 +34,13 @@ import { JwtService } from './services/jwt.service';
     AdminRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
   ],
   providers: [
     AuthGuard,

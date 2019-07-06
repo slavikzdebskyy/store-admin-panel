@@ -1,0 +1,14 @@
+{
+  "LAYOUT": {
+    "dashboard": "Dashboard"
+  },
+  "LOGIN": {
+    "title": "Dashboard Admin",
+    "enter_valid_email": "Please enter a valid email address",
+    "password": "Password",
+    "email": "Email",
+    "pswrd_required": "Password is required",
+    "forgot_pswrd": "Forgot your password?",
+    "login": "Login"
+  }
+}

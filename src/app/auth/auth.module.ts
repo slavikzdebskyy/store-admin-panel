@@ -1,13 +1,14 @@
-import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
 // Components
 import { LoginComponent } from './login/login.component';
 
 // Modules
-import { AuthRoutingModule } from './auth-routing.module';
 import { MaterialModule } from './../modules/material/material.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthRoutingModule } from './auth-routing.module';
 
 @NgModule({
   declarations: [LoginComponent],
@@ -17,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
+    TranslateModule,
   ]
 })
 export class AuthModule { }
