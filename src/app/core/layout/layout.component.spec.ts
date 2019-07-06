@@ -1,8 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { TranslateModule } from '@ngx-translate/core';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { LayoutComponent } from './layout.component';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { RouterTestingModule } from '@angular/router/testing';
 
 describe('LayoutComponent', () => {
   let component: LayoutComponent;
@@ -12,7 +13,10 @@ describe('LayoutComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ LayoutComponent ],
       schemas: [NO_ERRORS_SCHEMA],
-      imports: [RouterTestingModule],
+      imports: [
+        RouterTestingModule,
+        TranslateModule.forRoot(),
+      ],
     })
     .compileComponents();
   }));

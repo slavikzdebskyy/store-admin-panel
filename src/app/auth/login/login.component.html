@@ -6,20 +6,23 @@
       <div class="flex-center-center title-container">
         <img src="../../../assets/img/logo-icon.png" class="logo">
         <h3 class="title-3">
-          Dashboard Admin
+          {{ 'LOGIN.title' | translate }}
         </h3>
       </div>
       <div class="inputs">
         <mat-form-field  class="form-field" color="accent">
-          <input matInput placeholder="Email" formControlName="email">
-          <mat-error *ngIf="!loginForm.hasError('required') && loginForm.hasError('email')">
-            Please enter a valid email address
+          <input
+          matInput
+          placeholder="{{ 'LOGIN.email' | translate }}"
+          formControlName="email">
+          <mat-error *ngIf="!loginForm.hasError('required') || loginForm.hasError('email')">
+            {{ 'LOGIN.enter_valid_email' | translate }}
           </mat-error>
         </mat-form-field>
         <mat-form-field  class="form-field" >
             <input
               matInput
-              placeholder="Password"
+              placeholder="{{ 'LOGIN.password' | translate }}"
               formControlName="password"
               [type]="hide ? 'password' : 'text'">
             <button
@@ -32,7 +35,7 @@
                 </mat-icon>
             </button>
             <mat-error *ngIf="!loginForm.hasError('required')">
-              Password is required
+              {{ 'LOGIN.pswrd_required' | translate }}
             </mat-error>
         </mat-form-field>
       </div>
@@ -41,13 +44,13 @@
         <button
           mat-button
           color="accent">
-            Forgot your password?
+          {{ 'LOGIN.forgot_pswrd' | translate }}
         </button>
         <button
         mat-raised-button
         color="accent"
         (click)="onLogin()">
-            Login
+        {{ 'LOGIN.login' | translate }}
         </button>
     </div>
   </form>

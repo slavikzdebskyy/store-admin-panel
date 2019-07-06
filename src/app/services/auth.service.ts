@@ -1,9 +1,11 @@
-import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+
+import { ILoginRequest } from '../shared/interfaces/login-request.interface';
+import { Constants } from 'src/app/modules/constants/constants.module';
 import { environment } from './../../environments/environment';
 import { ILoginRequest } from '../shared/interfaces/login-request.interface';
-import { Constants } from './../modules/constants/constants.module';
 
 @Injectable()
 export class AuthService {
