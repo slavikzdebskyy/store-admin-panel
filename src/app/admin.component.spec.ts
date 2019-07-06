@@ -1,6 +1,14 @@
-import { TestBed, async } from '@angular/core/testing';
-import { AdminComponent } from './admin.component';
 import { RouterTestingModule } from '@angular/router/testing';
+import { TestBed, async } from '@angular/core/testing';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
+
+// Components
+import { AdminComponent } from './admin.component';
+
+class TranslateServiceMock {
+  setDefaultLang() {};
+  use() {};
+}
 
 describe('AdminComponent', () => {
   beforeEach(async(() => {
@@ -8,7 +16,13 @@ describe('AdminComponent', () => {
       declarations: [
         AdminComponent
       ],
-      imports: [RouterTestingModule],
+      imports: [
+        RouterTestingModule,
+        TranslateModule.forRoot(),
+      ],
+      providers: [
+        { provide: TranslateService, useClass: TranslateServiceMock }
+      ]
     }).compileComponents();
   }));
 
@@ -18,16 +32,4 @@ describe('AdminComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  // it(`should have as title 'store-admin-panel'`, () => {
-  //   const fixture = TestBed.createComponent(AdminComponent);
-  //   const app = fixture.debugElement.componentInstance;
-  //   expect(app.title).toEqual('store-admin-panel');
-  // });
-
-  // it('should render title in a h1 tag', () => {
-  //   const fixture = TestBed.createComponent(AdminComponent);
-  //   fixture.detectChanges();
-  //   const compiled = fixture.debugElement.nativeElement;
-  //   expect(compiled.querySelector('h1').textContent).toContain('Welcome to store-admin-panel!');
-  // });
 });
