@@ -11,11 +11,11 @@ const routes: Routes = [
   {
     path: Constants.ROUTERS.HOME,
     canActivate: [AuthGuard],
-    loadChildren: './core/core.module#CoreModule'
+    loadChildren: './core/core.module#CoreModule',
   },
   {
     path: Constants.ROUTERS.LOGIN,
-    loadChildren: './auth/auth.module#AuthModule'
+    loadChildren: './auth/auth.module#AuthModule',
   },
   {
     path: '**',
@@ -30,6 +30,6 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
   ],
   declarations: [],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AdminRoutingModule { }

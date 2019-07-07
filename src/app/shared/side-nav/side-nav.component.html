@@ -1,3 +1,40 @@
-<p>
-  side-nav works!
-</p>
+<div class="side-nav-container">
+  <ul>
+    <li
+    class="side-nav-item list-item"
+    [routerLink]="['', constants.ROUTERS.PRODUCTS]"
+    routerLinkActive="active">
+      <span class="icon">
+          <i class="fas fa-microchip"></i>
+      </span>
+      {{ 'SIDE_NAV_LIST.products' | translate }}
+    </li>
+    <li
+    class="side-nav-item list-item"
+    [routerLink]="['', constants.ROUTERS.ADD_NEW_PRODUCT]"
+    routerLinkActive="active">
+      <span class="icon">
+        <i class="far fa-plus-square"></i>
+      </span>
+      {{ 'SIDE_NAV_LIST.add_product' | translate }}
+    </li>
+    <li
+    class="side-nav-item list-item"
+    [routerLink]="['', constants.ROUTERS.EDIT_PRODUCT]"
+    routerLinkActive="active">
+      <span class="icon">
+          <i class="far fa-edit"></i>
+      </span>
+      {{ 'SIDE_NAV_LIST.edit_product' | translate }}
+    </li>
+    <li
+    class="side-nav-item list-item"
+    [routerLink]="['', constants.ROUTERS.ORDERS]"
+    routerLinkActive="active">
+      <span class="icon">
+          <i class="fas fa-box"></i>
+      </span>
+      {{ 'SIDE_NAV_LIST.orders' | translate }}
+    </li>
+  </ul>
+</div>
