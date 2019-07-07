@@ -5,21 +5,54 @@ import { RouterModule, Routes } from '@angular/router';
 // Modules
 import { Constants } from '../modules/constants/constants.module';
 
+//  Services
+import { AuthGuard } from '../auth/auth.guard';
+
 //  Components
 import { LayoutComponent } from './layout/layout.component';
-import { AuthGuard } from '../auth/auth.guard';
+import { ProductsComponent } from '../shared/products/products.component';
+import { AddNewProductComponent } from '../shared/add-new-product/add-new-product.component';
+import { EditProductComponent } from '../shared/edit-product/edit-product.component';
+import { OrdersComponent } from '../shared/orders/orders.component';
+
+const constants = Constants;
 
 const routes: Routes = [
   {
-    path: Constants.ROUTERS.HOME,
+    path: constants.ROUTERS.HOME,
     component: LayoutComponent,
+    canActivate: [AuthGuard],
     data: { title: 'Dashboard | Home' },
-    // children: [
-    //   {
-    //     path: ,
-    //     component: ,
-    //   }
-    // ]
+    children: [
+      {
+        path: Constants.ROUTERS.HOME,
+        redirectTo: constants.ROUTERS.PRODUCTS,
+      },
+      {
+        path: constants.ROUTERS.PRODUCTS,
+        component: ProductsComponent,
+        canActivate: [AuthGuard],
+        data: { title: 'Dashboard | Products' },
+      },
+      {
+        path: constants.ROUTERS.ADD_NEW_PRODUCT,
+        component: AddNewProductComponent,
+        canActivate: [AuthGuard],
+        data: { title: 'Dashboard | Add new product' },
+      },
+      {
+        path: constants.ROUTERS.EDIT_PRODUCT,
+        component: EditProductComponent,
+        canActivate: [AuthGuard],
+        data: { title: 'Dashboard | Edit product' },
+      },
+      {
+        path: constants.ROUTERS.ORDERS,
+        component: OrdersComponent,
+        canActivate: [AuthGuard],
+        data: { title: 'Dashboard | Orders' },
+      },
+    ],
   },
 ];
 
@@ -29,6 +62,6 @@ const routes: Routes = [
     RouterModule.forChild(routes),
   ],
   declarations: [],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class CoreRoutingModule { }

@@ -1,15 +1,15 @@
-import { OnInit, Component } from '@angular/core';
+import { Component } from '@angular/core';
+import { Constants } from 'src/app/modules/constants/constants.module';
 
 @Component({
   selector: 'admin-side-nav',
   templateUrl: './side-nav.component.html',
-  styleUrls: ['./side-nav.component.scss']
+  styleUrls: ['./side-nav.component.scss'],
 })
-export class SideNavComponent implements OnInit {
+export class SideNavComponent {
 
-  constructor() { }
+  public constants = Constants;
 
-  ngOnInit() {
-  }
+  constructor() {}
 
 }
