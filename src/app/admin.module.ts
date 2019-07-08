@@ -1,8 +1,10 @@
+import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { ToastrModule } from 'ngx-toastr';
 import { NgModule } from '@angular/core';
 
 import { AuthGuard } from './auth/auth.guard';
@@ -11,11 +13,11 @@ import { AuthGuard } from './auth/auth.guard';
 import { AdminComponent } from './admin.component';
 
   // Modules
-import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { AdminRoutingModule } from './admin-routing.module';
 import { SharedModule } from './shared/shared.module';
 
-// Services
+  // Services
+import { TranslateToastrService } from './services/translate-toastr.service';
 import { AuthService } from './services/auth.service';
 import { JwtService } from './services/jwt.service';
 
@@ -34,12 +36,13 @@ export function httpLoaderFactory(httpClient: HttpClient) {
     AdminRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    ToastrModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
         useFactory: httpLoaderFactory,
-        deps: [HttpClient]
-      }
+        deps: [HttpClient],
+      },
     }),
   ],
   providers: [
@@ -50,6 +53,7 @@ export function httpLoaderFactory(httpClient: HttpClient) {
         useClass: JwtService,
         multi: true,
       },
+    TranslateToastrService,
   ],
   bootstrap: [AdminComponent],
 })
