@@ -9,6 +9,8 @@ import { CommonModule } from '@angular/common';
 })
 export class Constants {
 
+  public static readonly MIN_PASSWORD_LENGTH = 6;
+
   public static readonly LANGUAGES = {
     DEAFAULT: 'en',
   };

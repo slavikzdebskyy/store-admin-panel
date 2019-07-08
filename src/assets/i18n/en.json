@@ -18,7 +18,12 @@
     "add_product": "Add new product",
     "edit_product": "Edit product",
     "orders": "Orders"
+  },
+
+  "ERRORS_MSG": {
+    "incorrect_password": "Incorrect password"
   }
+
 
 
 }
