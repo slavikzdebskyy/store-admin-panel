@@ -22,7 +22,15 @@
 
   "ERRORS_MSG": {
     "incorrect_password": "Incorrect password"
+  },
+
+  "PROFILE": {
+    "my_profile": "My Profile",
+    "profile_settings": "Profile settings",
+    "log_out": "Log out"
   }
+
+
 
 
 
