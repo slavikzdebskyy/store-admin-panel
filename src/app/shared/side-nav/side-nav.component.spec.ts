@@ -1,7 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { SideNavComponent } from './side-nav.component';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('SideNavComponent', () => {
   let component: SideNavComponent;
@@ -9,8 +10,9 @@ describe('SideNavComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SideNavComponent ],
+      declarations: [SideNavComponent],
       schemas: [NO_ERRORS_SCHEMA],
+      imports: [TranslateModule.forRoot()],
     })
     .compileComponents();
   }));

@@ -7,15 +7,15 @@ import { Constants } from 'src/app/modules/constants/constants.module';
 @Component({
   selector: 'admin-root',
   templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.scss']
+  styleUrls: ['./admin.component.scss'],
 })
 export class AdminComponent {
-  title = 'store-admin-panel';
+  title = 'Dashboard';
 
   constructor(translateService: TranslateService) {
 
-    translateService.setDefaultLang(Constants.DEAFAULT_LANGUAGE);
-    translateService.use(Constants.DEAFAULT_LANGUAGE);
+    translateService.setDefaultLang(Constants.LANGUAGES.DEAFAULT);
+    translateService.use(Constants.LANGUAGES.DEAFAULT);
 
   }
 

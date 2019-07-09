@@ -23,6 +23,6 @@
           "trace"
         ],
         "no-shadowed-variable": true,
-        "no-string-literal": false,
+        "no-string-literal": false
     }
 }
