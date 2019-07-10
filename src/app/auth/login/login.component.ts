@@ -40,7 +40,7 @@ export class LoginComponent implements OnDestroy {
         .login(this.loginForm.getRawValue())
         .subscribe(
           res => {
-            localStorage.setItem(this.constants.STORAGE_KEYS.ADMIN_KEY, res.token);
+            localStorage.setItem(this.constants.STORAGE_KEYS.ADMIN_KEY, res.token || '');
             this.router.navigate([Constants.ROUTERS.HOME]);
           },
           err => this.translateToastrService.errorMsg(err.error.message),

@@ -39,7 +39,10 @@
       {{ 'PROFILE.profile_settings' | translate }}
     </button>
     <mat-divider></mat-divider>
-    <button mat-menu-item class="menu-item">
+    <button
+      mat-menu-item
+      class="menu-item"
+      (click)="logOut()">
         <i class="fas fa-power-off menu-item-icon"></i>
       {{ 'PROFILE.log_out' | translate }}
     </button>
