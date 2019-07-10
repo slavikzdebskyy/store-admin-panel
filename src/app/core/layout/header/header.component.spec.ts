@@ -4,6 +4,14 @@ import { HeaderComponent } from './header.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { MatMenuModule } from '@angular/material/menu';
+import { AuthService } from 'src/app/services/auth.service';
+import { RouterTestingModule } from '@angular/router/testing';
+import { of } from 'rxjs';
+import { TranslateToastrService } from 'src/app/services/translate-toastr.service';
+
+class AuthServiceMock {
+  public logout() { return of({}); }
+}
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -16,6 +24,11 @@ describe('HeaderComponent', () => {
       imports: [
         TranslateModule.forRoot(),
         MatMenuModule,
+        RouterTestingModule,
+      ],
+      providers: [
+        { provide: AuthService, useClass: AuthServiceMock },
+        { provide: TranslateToastrService },
       ],
     })
     .compileComponents();

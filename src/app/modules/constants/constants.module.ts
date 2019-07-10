@@ -28,6 +28,7 @@ export class Constants {
   public static readonly ROUTERS_API = {
     ADMIN: {
       LOGIN: '/administrators/login-admin',
+      LOGOUT: '/administrators/logout-admin',
     },
   };
 
