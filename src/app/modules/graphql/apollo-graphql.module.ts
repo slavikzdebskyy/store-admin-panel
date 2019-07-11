@@ -22,7 +22,7 @@ const serverApiUrl = environment.serverApiUrl;
       return {
         cache: new InMemoryCache(),
         link: httpLink.create({
-          uri: `${serverApiUrl}/graphql`,
+          uri: serverApiUrl,
         }),
       };
     },
