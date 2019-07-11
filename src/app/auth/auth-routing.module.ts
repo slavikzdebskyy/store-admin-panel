@@ -10,7 +10,7 @@ const routes: Routes = [
   {
     path: Constants.ROUTERS.HOME,
     component: LoginComponent,
-    data: {title: 'Dashboard | Login'}
+    data: { title: 'Dashboard | Login' },
   },
   // {
   //   path: Constants.ROUTERS.REGISTRATION,

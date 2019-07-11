@@ -36,4 +36,4 @@ export class Constants {
     ADMIN_KEY: 'admin_token',
   };
 
- }
+}

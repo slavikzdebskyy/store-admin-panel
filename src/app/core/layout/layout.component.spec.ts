@@ -11,7 +11,7 @@ describe('LayoutComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LayoutComponent ],
+      declarations: [LayoutComponent],
       schemas: [NO_ERRORS_SCHEMA],
       imports: [
         RouterTestingModule,

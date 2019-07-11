@@ -9,7 +9,9 @@
     "test": "ng test",
     "test:dev": "ng test --karma-config ./karma.dev.conf.js",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "precommit": "npm run lint",
+    "prepush": "npm run test"
   },
   "private": true,
   "dependencies": {
