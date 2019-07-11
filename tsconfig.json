@@ -16,7 +16,8 @@
     ],
     "lib": [
       "es2017",
-      "dom"
+      "dom",
+      "esnext.asynciterable"
     ],
     "paths": {
       "@admin-panel/themes": ["src/app/modules/themes/index.scss"],
