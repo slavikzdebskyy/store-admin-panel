@@ -9,7 +9,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 
-
 const MODULES = [
   MatSidenavModule,
   MatInputModule,
@@ -27,6 +26,6 @@ const MODULES = [
   declarations: [],
   exports: [
     ...MODULES,
-  ]
+  ],
 })
 export class MaterialModule { }
