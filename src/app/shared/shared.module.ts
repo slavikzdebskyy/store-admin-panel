@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 // Modules
-  import { RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
  // Components
 import { SideNavComponent } from './side-nav/side-nav.component';
@@ -22,7 +22,7 @@ const COMPONENTS = [
 
 @NgModule({
   imports: [
-  CommonModule,
+    CommonModule,
     TranslateModule,
     RouterModule,
   ],

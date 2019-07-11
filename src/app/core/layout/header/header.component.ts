@@ -44,7 +44,7 @@ export class HeaderComponent implements OnInit {
               this.router.navigate([Constants.ROUTERS.LOGIN]);
             }
           },
-          (err: HttpErrorResponse ) => this.translateToastrService.errorMsg(err.error.message),
+          (err: HttpErrorResponse) => this.translateToastrService.errorMsg(err.error.message),
       ),
     );
   }

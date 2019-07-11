@@ -1,7 +1,8 @@
 import { ActivatedRouteSnapshot, Router, RouterStateSnapshot, CanActivate } from '@angular/router';
+import { JwtHelperService } from '@auth0/angular-jwt';
 import { Injectable } from '@angular/core';
-import { JwtHelperService } from "@auth0/angular-jwt";
 import { Observable } from 'rxjs';
+
 import { Constants } from './../modules/constants/constants.module';
 
 @Injectable()
@@ -10,7 +11,8 @@ export class AuthGuard implements CanActivate {
   jwtHelper = new JwtHelperService();
   constructor(private router: Router) {}
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+  canActivate(
+    route: ActivatedRouteSnapshot, tate: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     const token = localStorage.getItem(Constants.STORAGE_KEYS.ADMIN_KEY) || '';
     if (!this.jwtHelper.isTokenExpired(token)) {
       return true;

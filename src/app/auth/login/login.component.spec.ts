@@ -18,10 +18,10 @@ describe('LoginComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoginComponent ],
+      declarations: [LoginComponent],
       schemas: [NO_ERRORS_SCHEMA],
       imports: [
-  FormsModule,
+        FormsModule,
         ReactiveFormsModule,
         RouterTestingModule,
         TranslateModule.forRoot(),
