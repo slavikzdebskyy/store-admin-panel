@@ -6,23 +6,23 @@ import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { AdminComponent } from './admin.component';
 
 class TranslateServiceMock {
-  setDefaultLang() {};
-  use() {};
+  setDefaultLang() {}
+  use() {}
 }
 
 describe('AdminComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AdminComponent
+        AdminComponent,
       ],
       imports: [
         RouterTestingModule,
         TranslateModule.forRoot(),
       ],
       providers: [
-        { provide: TranslateService, useClass: TranslateServiceMock }
-      ]
+        { provide: TranslateService, useClass: TranslateServiceMock },
+      ],
     }).compileComponents();
   }));
 

@@ -50,11 +50,11 @@ export function httpLoaderFactory(httpClient: HttpClient) {
   providers: [
     AuthGuard,
     AuthService,
-      {
-        provide: HTTP_INTERCEPTORS,
-        useClass: JwtService,
-        multi: true,
-      },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtService,
+      multi: true,
+    },
     TranslateToastrService,
   ],
   bootstrap: [AdminComponent],
