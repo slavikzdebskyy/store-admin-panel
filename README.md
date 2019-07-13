@@ -1,27 +1,52 @@
 # StoreAdminPanel
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.4.
+## Tech stack:
 
-## Development server
+* Angular
+* TypeScript 
+* HTML/SCSS
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Contribution process overview
 
-## Code scaffolding
+1. Fork this project.
+1. Create a feature branch.
+1. Make your changes.
+1. Run the game locally
+1. Run the tests.
+1. Push your changes to your fork/branch.
+1. Open a pull request.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### 1. Fork
 
-## Build
+1. Click the fork button up top.
+1. Clone your fork locally (Notice that git's `origin` reference will point to your forked repository).
+1. It is useful to have the upstream repository registered as well using: `git remote add upstream https://github.com/slavikzdebskyy/store-admin-panel.git` and periodically fetch it using `git fetch upstream`.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### 2. Create a feature branch
 
-## Running unit tests
+Create and switch to a new feature branch: `git checkout -b {branch_name} upstream/master`  
+(replace `{branch_name}` with a meaningful name that describes your feature or change).
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### 3. Make your changes
 
-## Running end-to-end tests
+Now that you have a new branch you can edit/create/delete files. Use touch-up commits using `git commit --amend`. (You may use git force push after that).
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### 4. Run the game locally
 
-## Further help
+- Install the dependencies: `npm install`.
+- Start the local development server: `npm start`.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### 5. Run the tests
+
+- Run tests: `npm test`.
+- Run lint: `npm run lint`.
+
+### 6. Push your changes to your fork/branch
+
+After lint and all tests pass, push the changes to your fork/branch on GitHub: `git push origin {branch_name}`. For force push, which will destroy previous commits on the server, use `--force` (or `-f`) option.
+
+### 7. Create a pull request
+
+Create a pull request on GitHub for your feature branch.
+
+
