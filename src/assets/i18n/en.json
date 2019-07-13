@@ -2,6 +2,7 @@
   "LAYOUT": {
     "dashboard": "Dashboard"
   },
+
   "LOGIN": {
     "title": "Dashboard Admin",
     "enter_valid_email": "Please enter a valid email address",
@@ -10,5 +11,27 @@
     "pswrd_required": "Password is required",
     "forgot_pswrd": "Forgot your password?",
     "login": "Login"
+  },
+
+  "SIDE_NAV_LIST": {
+    "products": "Products",
+    "add_product": "Add new product",
+    "edit_product": "Edit product",
+    "orders": "Orders"
+  },
+
+  "ERRORS_MSG": {
+    "incorrect_password": "Incorrect password"
+  },
+
+  "PROFILE": {
+    "my_profile": "My Profile",
+    "profile_settings": "Profile settings",
+    "log_out": "Log out"
   }
+
+
+
+
+
 }

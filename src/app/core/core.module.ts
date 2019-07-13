@@ -7,6 +7,7 @@ import { MaterialModule } from '../modules/material/material.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CoreRoutingModule } from './core-routing.module';
 import { SharedModule } from './../shared/shared.module';
+import { Constants } from 'src/app/modules/constants/constants.module';
 
 // Components
 import { HeaderComponent } from './layout/header/header.component';
@@ -21,6 +22,7 @@ import { LayoutComponent } from './layout/layout.component';
     FormsModule,
     ReactiveFormsModule,
     TranslateModule,
+    Constants,
   ],
   declarations: [
     LayoutComponent,

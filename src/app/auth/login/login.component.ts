@@ -1,9 +1,10 @@
-import { Component, OnDestroy } from '@angular/core';
+import { TranslateToastrService } from 'src/app/services/translate-toastr.service';
+import { Constants } from 'src/app/modules/constants/constants.module';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
-import { Subscription } from 'rxjs';
-import { Constants } from 'src/app/modules/constants/constants.module';
+import { Component, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'admin-login',
@@ -15,16 +16,17 @@ export class LoginComponent implements OnDestroy {
   public loginForm: FormGroup;
   public hide = true;
   private subs: Subscription = new Subscription();
-  private readonly STORAGE_KEYS = Constants.STORAGE_KEYS;
+  private readonly constants = Constants;
 
   constructor(
+    private translateToastrService: TranslateToastrService,
     private formBuilder: FormBuilder,
     private authService: AuthService,
     private router: Router,
     ) {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(this.constants.MIN_PASSWORD_LENGTH)]],
     });
   }
 
@@ -38,11 +40,11 @@ export class LoginComponent implements OnDestroy {
         .login(this.loginForm.getRawValue())
         .subscribe(
           res => {
-            localStorage.setItem(this.STORAGE_KEYS.ADMIN_KEY, res.token);
+            localStorage.setItem(this.constants.STORAGE_KEYS.ADMIN_KEY, res.token || '');
             this.router.navigate([Constants.ROUTERS.HOME]);
           },
-          err => console.log(err.error.message) // TODO implment toastr service
-        )
-    )
+          err => this.translateToastrService.errorMsg(err.error.message),
+        ),
+    );
   }
 }
