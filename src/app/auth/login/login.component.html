@@ -13,6 +13,7 @@
         <mat-form-field  class="form-field" color="accent">
           <input
           matInput
+          type="email"
           placeholder="{{ 'LOGIN.email' | translate }}"
           formControlName="email">
           <mat-error *ngIf="!loginForm.hasError('required') || loginForm.hasError('email')">
