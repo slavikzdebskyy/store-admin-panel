@@ -1,31 +1,98 @@
 # StoreAdminPanel
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.4.
+## Tech stack:
 
-## Development server
+* Angular
+* TypeScript 
+* HTML/SCSS
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Contribution process overview
 
-## Code scaffolding
+1. Fork this project.
+1. Create a feature branch.
+1. Make your changes.
+1. Run the project locally
+1. Run the tests.
+1. Push your changes to your fork/branch.
+1. Open a pull request.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### 1. Fork
 
-## Build
+Click the _Fork_ button up top.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+![Forking the repo](.github/fork.png)
 
-## Running unit tests
+Clone your fork locally (Notice that git's `origin` reference will point to your forked repository).
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![Cloning the repo](.github/clone.png)
 
-## Running end-to-end tests
+It is useful to have the upstream repository registered as well using: 
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+    git remote add upstream https://github.com/slavikzdebskyy/store-admin-panel.git
 
-## Running cypress tests
+and periodically fetch it using 
 
-Run `npm run cypress:open` to execute the tests via [Cypress](https://www.cypress.io/).
+    git fetch upstream
 
-## Further help
+### 2. Switch to _develop_ branch
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Switch to _develop_ branch: 
+
+    git checkout develop
+
+or
+
+    git checkout -b devlop
+    git pull
+
+
+### 3. Create a feature branch
+
+Create and switch to a new feature branch:  
+
+    git checkout -b {branch_name} upstream/master 
+
+(replace `{branch_name}` with a meaningful name that describes your feature or change).
+
+### 4. Make your changes
+
+Now that you have a new branch you can edit/create/delete files. Use touch-up commits using:
+
+    git commit --amend`
+
+(You may use git force push after that).
+
+### 5. Run the project locally
+
+Install the dependencies: `
+
+    npm install
+
+Start the local development server:
+
+    npm start
+
+### 6. Run the tests
+
+Run tests: 
+    
+    npm test
+
+Run Cypress tests:
+
+    npm run cypress:open
+
+Run lint: 
+    
+    npm run lint
+
+### 7. Push your changes to your fork/branch
+
+After lint and all tests pass, push the changes to your fork/branch on GitHub: 
+    
+    git push origin {branch_name}
+For force push, which will destroy previous commits on the server, use `--force` (or `-f`) option.
+
+### 8. Create a pull request
+
+Create a pull request on GitHub for your feature branch.
