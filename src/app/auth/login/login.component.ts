@@ -35,16 +35,18 @@ export class LoginComponent implements OnDestroy {
   }
 
   public onLogin(): void {
-    this.subs.add(
-      this.authService
-        .login(this.loginForm.getRawValue())
-        .subscribe(
-          (res) => {
-            localStorage.setItem(this.constants.STORAGE_KEYS.ADMIN_KEY, res.token || '');
-            this.router.navigate([Constants.ROUTERS.HOME]);
-          },
-          err => this.translateToastrService.errorMsg(err.error.message),
-        ),
-    );
+    if (this.loginForm.valid) {
+      this.subs.add(
+        this.authService
+          .login(this.loginForm.getRawValue())
+          .subscribe(
+            (res) => {
+              localStorage.setItem(this.constants.STORAGE_KEYS.ADMIN_KEY, res.token || '');
+              this.router.navigate([Constants.ROUTERS.HOME]);
+            },
+            err => this.translateToastrService.errorMsg(err.error.message),
+          ),
+      );
+    }
   }
 }
