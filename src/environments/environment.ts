@@ -1,4 +1,4 @@
-import { base } from "./environment.base";
+import { base } from './environment.base';
 
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
@@ -7,7 +7,7 @@ import { base } from "./environment.base";
 export const environment = {
   ...base,
   env: 'default',
-  production: false
+  production: false,
 };
 
 /*

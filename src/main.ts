@@ -11,4 +11,3 @@ if (environment.production) {
 
 platformBrowserDynamic().bootstrapModule(AdminModule)
   .catch(err => console.error(err));
-

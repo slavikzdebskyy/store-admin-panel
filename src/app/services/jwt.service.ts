@@ -8,7 +8,7 @@ export class JwtService implements HttpInterceptor {
   constructor(private injector: Injector) {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const authService: AuthService = this.injector.get(AuthService);
+    const authService: AuthService = this.injector.get<any>(AuthService);
     const token: string = authService.adminToken;
     let extendHeaders: any = {} as any;
 

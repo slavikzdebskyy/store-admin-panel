@@ -78,6 +78,10 @@ Run tests:
     
     npm test
 
+Run Cypress tests:
+
+    npm run cypress:open
+
 Run lint: 
     
     npm run lint
@@ -92,5 +96,3 @@ For force push, which will destroy previous commits on the server, use `--force`
 ### 8. Create a pull request
 
 Create a pull request on GitHub for your feature branch.
-
-

@@ -13,6 +13,7 @@ import { AuthGuard } from './auth/auth.guard';
 import { AdminComponent } from './admin.component';
 
   // Modules
+import { ApolloGrraphQLModule } from './modules/graphql/apollo-graphql.module';
 import { AdminRoutingModule } from './admin-routing.module';
 import { SharedModule } from './shared/shared.module';
 
@@ -36,6 +37,7 @@ export function httpLoaderFactory(httpClient: HttpClient) {
     AdminRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    ApolloGrraphQLModule,
     ToastrModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
@@ -48,11 +50,11 @@ export function httpLoaderFactory(httpClient: HttpClient) {
   providers: [
     AuthGuard,
     AuthService,
-      {
-        provide: HTTP_INTERCEPTORS,
-        useClass: JwtService,
-        multi: true,
-      },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtService,
+      multi: true,
+    },
     TranslateToastrService,
   ],
   bootstrap: [AdminComponent],
