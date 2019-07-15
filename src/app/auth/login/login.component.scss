@@ -38,12 +38,17 @@
 }
 .form-field {
   padding: 0 30px;
+
+  .mat-icon {
+    font-size: 16px;
+  }
 }
 
 .btn-container {
   width: 100%;
   padding: 15px 30px;
 }
+
 
 @media screen and (max-width: $break-small) {
 
