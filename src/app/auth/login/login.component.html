@@ -13,6 +13,7 @@
         <mat-form-field  class="form-field" color="accent">
           <input
           matInput
+          (keydown.enter)="onLogin()"
           type="email"
           placeholder="{{ 'LOGIN.email' | translate }}"
           formControlName="email">
@@ -23,18 +24,20 @@
         <mat-form-field  class="form-field" >
             <input
               matInput
+              (keydown.enter)="onLogin()"
               placeholder="{{ 'LOGIN.password' | translate }}"
               formControlName="password"
-              [type]="hide ? 'password' : 'text'">
-            <button
-              mat-icon-button matSuffix
-              (click)="hide = !hide"
+              [type]="hide ? 'password' : 'text'"
+            >
+            <mat-icon
+              mat-icon-button
+              matSuffix
               [attr.aria-label]="'Hide password'"
-              [attr.aria-pressed]="hide">
-                <mat-icon>
-                  {{hide ? 'visibility_off' : 'visibility'}}
-                </mat-icon>
-            </button>
+              [attr.aria-pressed]="hide"
+              (click)="hide = !hide"
+            >
+              {{hide ? 'visibility_off' : 'visibility'}}
+            </mat-icon>
             <mat-error *ngIf="!loginForm.hasError('required')">
               {{ 'LOGIN.pswrd_required' | translate }}
             </mat-error>
