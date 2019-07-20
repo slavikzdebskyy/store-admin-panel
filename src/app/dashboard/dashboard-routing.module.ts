@@ -5,17 +5,14 @@ import { RouterModule, Routes } from '@angular/router';
 // Modules
 import { Constants } from '../modules/constants/constants.module';
 
-//  Services
-import { AuthGuard } from '../auth/auth.guard';
-
 //  Components
 import { LayoutComponent } from './layout/layout.component';
-import { ProductsComponent } from '../shared/products/products.component';
-import { AddNewProductComponent } from '../shared/add-new-product/add-new-product.component';
-import { EditProductComponent } from '../shared/edit-product/edit-product.component';
-import { OrdersComponent } from '../shared/orders/orders.component';
-import { ConfigureComponent } from '../shared/configure/configure.component';
-import { UsersComponent } from './../shared/users/users.component';
+import { ProductsComponent } from './products/products.component';
+import { AddNewProductComponent } from './add-new-product/add-new-product.component';
+import { EditProductComponent } from './edit-product/edit-product.component';
+import { OrdersComponent } from './orders/orders.component';
+import { ConfigureComponent } from './configure/configure.component';
+import { UsersComponent } from './users/users.component';
 
 const constants = Constants;
 
@@ -23,7 +20,6 @@ const routes: Routes = [
   {
     path: constants.ROUTERS.HOME,
     component: LayoutComponent,
-    canActivate: [AuthGuard],
     data: { title: 'Dashboard | Home' },
     children: [
       {
@@ -33,37 +29,31 @@ const routes: Routes = [
       {
         path: constants.ROUTERS.PRODUCTS,
         component: ProductsComponent,
-        canActivate: [AuthGuard],
         data: { title: 'Dashboard | Products' },
       },
       {
         path: constants.ROUTERS.ADD_NEW_PRODUCT,
         component: AddNewProductComponent,
-        canActivate: [AuthGuard],
         data: { title: 'Dashboard | Add new product' },
       },
       {
         path: constants.ROUTERS.EDIT_PRODUCT,
         component: EditProductComponent,
-        canActivate: [AuthGuard],
         data: { title: 'Dashboard | Edit product' },
       },
       {
         path: constants.ROUTERS.ORDERS,
         component: OrdersComponent,
-        canActivate: [AuthGuard],
         data: { title: 'Dashboard | Orders' },
       },
       {
         path: constants.ROUTERS.CONFIGURE,
         component: ConfigureComponent,
-        canActivate: [AuthGuard],
         data: { title: 'Dashboard | Configure' },
       },
       {
         path: constants.ROUTERS.USERS,
         component: UsersComponent,
-        canActivate: [AuthGuard],
         data: { title: 'Dashboard | Users' },
       },
     ],
