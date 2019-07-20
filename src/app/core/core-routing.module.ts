@@ -1,4 +1,4 @@
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -14,6 +14,8 @@ import { ProductsComponent } from '../shared/products/products.component';
 import { AddNewProductComponent } from '../shared/add-new-product/add-new-product.component';
 import { EditProductComponent } from '../shared/edit-product/edit-product.component';
 import { OrdersComponent } from '../shared/orders/orders.component';
+import { ConfigureComponent } from '../shared/configure/configure.component';
+import { UsersComponent } from './../shared/users/users.component';
 
 const constants = Constants;
 
@@ -51,6 +53,18 @@ const routes: Routes = [
         component: OrdersComponent,
         canActivate: [AuthGuard],
         data: { title: 'Dashboard | Orders' },
+      },
+      {
+        path: constants.ROUTERS.CONFIGURE,
+        component: ConfigureComponent,
+        canActivate: [AuthGuard],
+        data: { title: 'Dashboard | Configure' },
+      },
+      {
+        path: constants.ROUTERS.USERS,
+        component: UsersComponent,
+        canActivate: [AuthGuard],
+        data: { title: 'Dashboard | Users' },
       },
     ],
   },

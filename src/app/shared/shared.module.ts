@@ -11,6 +11,8 @@ import { ProductsComponent } from './products/products.component';
 import { AddNewProductComponent } from './add-new-product/add-new-product.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { OrdersComponent } from './orders/orders.component';
+import { ConfigureComponent } from './configure/configure.component';
+import { UsersComponent } from './users/users.component';
 
 const COMPONENTS = [
   SideNavComponent,
@@ -18,6 +20,8 @@ const COMPONENTS = [
   AddNewProductComponent,
   EditProductComponent,
   OrdersComponent,
+  ConfigureComponent,
+  UsersComponent,
 ];
 
 @NgModule({
@@ -28,6 +32,8 @@ const COMPONENTS = [
   ],
   declarations: [
     ...COMPONENTS,
+    UsersComponent,
+    ConfigureComponent,
   ],
   exports: [
     ...COMPONENTS,
