@@ -17,7 +17,9 @@
     "products": "Products",
     "add_product": "Add new product",
     "edit_product": "Edit product",
-    "orders": "Orders"
+    "orders": "Orders",
+    "configure": "Configure",
+    "users": "Users"
   },
 
   "ERRORS_MSG": {
