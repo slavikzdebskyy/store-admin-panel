@@ -1,5 +1,3 @@
-/// <reference types="Cypress" />
-
 context('Login', () => {
   it('should login user', () => {
     cy.login();
@@ -43,6 +41,12 @@ context('Login', () => {
     cy.get('button').contains('Login').click();
 
     cy.get('.toast-container').contains('Incorrect password');
+  });
+
+  it('should show spinner on login', () => {
+    cy.login();
+
+    cy.get('mat-spinner').should('be.visible');
   });
 
 });

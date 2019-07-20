@@ -1,7 +1,9 @@
 <div class="login-container flex-center-center">
   <form
+    *ngIf="!spinner.isShown"
     class="login-form col-spc-btwn-cntr"
-    [formGroup]="loginForm">
+    [formGroup]="loginForm"
+  >
     <div class="input-wrapper">
       <div class="flex-center-center title-container">
         <img src="../../../assets/img/logo-icon.png" class="logo">
@@ -59,4 +61,7 @@
         </button>
     </div>
   </form>
+
+  <mat-spinner *ngIf="spinner.isShown" [diameter]="60"></mat-spinner>
 </div>
+
