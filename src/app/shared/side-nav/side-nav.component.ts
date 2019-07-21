@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Constants } from 'src/app/modules/constants/constants.module';
 
 @Component({
@@ -10,6 +10,7 @@ export class SideNavComponent {
 
   public constants = Constants;
 
-  constructor() {}
+  @Input()
+  public isSideNavOpened = true;
 
 }
