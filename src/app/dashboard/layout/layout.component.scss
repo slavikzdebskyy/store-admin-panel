@@ -9,11 +9,13 @@
 }
 
 .content {
-  width: 100%;
+  width: auto;
 }
 
 .logo-container {
-  width: 250px;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: auto;
   height: 65px;
   background-color: $side-nav-color;
   color: $color-main-1;
@@ -22,10 +24,14 @@
 }
 
 .logo-img {
-  padding-left: 10px;
   margin-right: 5px;
+
+  &--margin {
+    margin-right: 0;
+    margin-left: 5px;
+  }
 }
 
 .small {
-  width: calc(100% - 251px);
+  width: calc(100% - 211px);
 }

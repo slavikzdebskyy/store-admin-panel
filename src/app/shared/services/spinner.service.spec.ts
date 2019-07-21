@@ -4,7 +4,7 @@ import { SpinnerService } from './spinner.service';
 
 describe('SpinnerService', () => {
   beforeEach(() => TestBed.configureTestingModule({
-    providers: [SpinnerService]
+    providers: [SpinnerService],
   }));
 
   it('should be created', () => {

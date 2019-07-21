@@ -3,9 +3,17 @@
   display: flex;
   white-space: nowrap;
   align-items: center;
+
+  &--center {
+    justify-content: center;
+  }
 }
 
 .icon {
   padding-right: 10px;
   font-size: 20px;
+
+  &--padding {
+    padding-right: 0px;
+  }
 }
