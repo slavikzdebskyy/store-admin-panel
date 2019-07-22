@@ -4,6 +4,6 @@ export const environment = {
   ...base,
   env: 'prod',
   production: true,
-  serverApiUrl: 'http://node.help-service.lviv.ua/api',
-  serverGraphQLUrl: 'http://node.help-service.lviv.ua/api/graphql',
+  serverApiUrl: 'http://api.help-service.lviv.ua/api',
+  serverGraphQLUrl: 'http://api.help-service.lviv.ua/api/graphql',
 };
