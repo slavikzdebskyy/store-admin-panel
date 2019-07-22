@@ -1,17 +1,21 @@
-<mat-drawer-container class="main-container">
+<mat-drawer-container class="main-container" autosize>
   <mat-drawer
     mode="side"
-    [(opened)]="isSideNavOpened">
+    disableClose="true"
+    opened="true"
+  >
     <div class="logo-container">
       <img
-        src="../../../assets/img/logo-icon.png"
+        src="assets/img/logo-icon.png"
         alt=""
-        class="logo-img">
-      <h2 class="title-2">
+        class="logo-img"
+        [class.logo-img--margin]="!isSideNavOpened"
+      >
+      <h2 *ngIf="isSideNavOpened" class="title-2">
         {{ 'LAYOUT.dashboard' | translate }}
       </h2>
     </div>
-    <admin-side-nav></admin-side-nav>
+    <admin-side-nav [isSideNavOpened]="isSideNavOpened"></admin-side-nav>
   </mat-drawer>
   <mat-drawer-content class="content" [class.small]="isSideNavOpened">
     <admin-header

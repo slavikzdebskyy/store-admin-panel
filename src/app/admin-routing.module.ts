@@ -11,7 +11,7 @@ const routes: Routes = [
   {
     path: Constants.ROUTERS.HOME,
     canActivate: [AuthGuard],
-    loadChildren: './core/core.module#CoreModule',
+    loadChildren: './dashboard/dashboard.module#DashboardModule',
   },
   {
     path: Constants.ROUTERS.LOGIN,

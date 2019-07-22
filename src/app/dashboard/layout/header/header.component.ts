@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 import { IAuthResponse } from 'src/app/shared/interfaces/auth-api.interfaces';
-import { Constants } from './../../../modules/constants/constants.module';
+import { Constants } from '../../../modules/constants/constants.module';
 import { TranslateToastrService } from 'src/app/services/translate-toastr.service';
 
 @Component({

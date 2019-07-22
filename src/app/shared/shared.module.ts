@@ -7,17 +7,9 @@ import { RouterModule } from '@angular/router';
 
  // Components
 import { SideNavComponent } from './side-nav/side-nav.component';
-import { ProductsComponent } from './products/products.component';
-import { AddNewProductComponent } from './add-new-product/add-new-product.component';
-import { EditProductComponent } from './edit-product/edit-product.component';
-import { OrdersComponent } from './orders/orders.component';
 
 const COMPONENTS = [
   SideNavComponent,
-  ProductsComponent,
-  AddNewProductComponent,
-  EditProductComponent,
-  OrdersComponent,
 ];
 
 @NgModule({
@@ -31,6 +23,7 @@ const COMPONENTS = [
   ],
   exports: [
     ...COMPONENTS,
+    RouterModule,
   ],
 })
 export class SharedModule { }

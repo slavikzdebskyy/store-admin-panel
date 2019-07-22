@@ -1,15 +1,23 @@
-import { TranslateToastrService } from 'src/app/services/translate-toastr.service';
-import { Constants } from 'src/app/modules/constants/constants.module';
+import { Component, OnDestroy, Self } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { AuthService } from 'src/app/services/auth.service';
-import { Component, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+
+// rxjs
 import { Subscription } from 'rxjs';
+
+// constants
+import { Constants } from 'src/app/modules/constants/constants.module';
+
+// services
+import { SpinnerService } from './../../shared/services/spinner.service';
+import { TranslateToastrService } from 'src/app/services/translate-toastr.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'admin-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
+  providers: [SpinnerService],
 })
 export class LoginComponent implements OnDestroy {
 
@@ -23,6 +31,7 @@ export class LoginComponent implements OnDestroy {
     private formBuilder: FormBuilder,
     private authService: AuthService,
     private router: Router,
+    @Self() public spinner: SpinnerService,
     ) {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -36,15 +45,24 @@ export class LoginComponent implements OnDestroy {
 
   public onLogin(): void {
     if (this.loginForm.valid) {
+
+      this.spinner.show();
+
       this.subs.add(
         this.authService
           .login(this.loginForm.getRawValue())
           .subscribe(
             (res) => {
+              this.spinner.hide();
+
               localStorage.setItem(this.constants.STORAGE_KEYS.ADMIN_KEY, res.token || '');
               this.router.navigate([Constants.ROUTERS.HOME]);
             },
-            err => this.translateToastrService.errorMsg(err.error.message),
+            (err) => {
+              this.spinner.hide();
+
+              this.translateToastrService.errorMsg(err.error.message);
+            },
           ),
       );
     }

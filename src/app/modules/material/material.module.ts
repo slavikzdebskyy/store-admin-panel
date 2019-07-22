@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 const MODULES = [
   MatSidenavModule,
@@ -16,6 +17,7 @@ const MODULES = [
   MatButtonModule,
   MatMenuModule,
   MatDividerModule,
+  MatProgressSpinnerModule,
 ];
 
 @NgModule({
@@ -23,7 +25,6 @@ const MODULES = [
     CommonModule,
     ...MODULES,
   ],
-  declarations: [],
   exports: [
     ...MODULES,
   ],
