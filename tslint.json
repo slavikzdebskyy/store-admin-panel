@@ -1,8 +1,7 @@
 {
-  "extends": [
-    "tslint-config-airbnb",
-    "codelyzer",
-    "tslint-angular"
+  "extends": "tslint-config-airbnb",
+  "rulesDirectory": [
+    "node_modules/codelyzer"
   ],
   "rules": {
     "arrow-return-shorthand": true,
@@ -91,16 +90,6 @@
     "use-pipe-transform-interface": true,
     "component-class-suffix": true,
     "directive-class-suffix": true,
-
-    "nx-enforce-module-boundaries": [
-      true,
-      {
-        "allow": [],
-        "depConstraints": [
-          { "sourceTag": "*", "onlyDependOnLibsWithTags": ["*"] }
-        ]
-      }
-    ],
     "import-name": false,
     "max-line-length": [true, 120]
   }

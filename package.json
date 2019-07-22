@@ -8,12 +8,13 @@
     "build:prod": "ng build --configuration=production --build-optimizer",
     "build:dev": "ng build --configuration=develop --build-optimizer",
     "test": "ng test",
-    "test:dev": "ng test --karma-config ./karma.dev.conf.js",
+    "test:dev": "ng test --karma-config ./src/karma.dev.conf.js",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "prepush": "npm run test"
   },
   "private": true,
   "dependencies": {
