@@ -6,12 +6,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { Constants } from '../modules/constants/constants.module';
 
 //  Components
-import { LayoutComponent } from './layout/layout.component';
-import { ProductsComponent } from './products/products.component';
 import { AddNewProductComponent } from './add-new-product/add-new-product.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
-import { OrdersComponent } from './orders/orders.component';
 import { ConfigureComponent } from './configure/configure.component';
+import { CustomersComponent } from './customers/customers.component';
+import { FeedbacksComponent } from './feedbacks/feedbacks.component';
+import { MessagesComponent } from './messages/messages.component';
+import { ProductsComponent } from './products/products.component';
+import { OrdersComponent } from './orders/orders.component';
+import { LayoutComponent } from './layout/layout.component';
 import { UsersComponent } from './users/users.component';
 
 const constants = Constants;
@@ -52,9 +55,24 @@ const routes: Routes = [
         data: { title: 'Dashboard | Configure' },
       },
       {
-        path: constants.ROUTERS.USERS,
+        path: constants.ROUTERS.ADMINS,
         component: UsersComponent,
-        data: { title: 'Dashboard | Users' },
+        data: { title: 'Dashboard | Administrators' },
+      },
+      {
+        path: constants.ROUTERS.CUSTOMERS,
+        component: CustomersComponent,
+        data: { title: 'Dashboard | Customers' },
+      },
+      {
+        path: constants.ROUTERS.MESSAGES,
+        component: FeedbacksComponent,
+        data: { title: 'Dashboard | Messages' },
+      },
+      {
+        path: constants.ROUTERS.FEEDBACKS,
+        component: MessagesComponent,
+        data: { title: 'Dashboard | Feedbacks' },
       },
     ],
   },
