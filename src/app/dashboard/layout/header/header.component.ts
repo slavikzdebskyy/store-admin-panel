@@ -1,12 +1,9 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
-import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
-import { IAuthResponse } from 'src/app/shared/interfaces/auth-api.interfaces';
 import { Constants } from '../../../modules/constants/constants.module';
-import { TranslateToastrService } from 'src/app/services/translate-toastr.service';
 
 @Component({
   selector: 'admin-header',
@@ -22,7 +19,6 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private translateToastrService: TranslateToastrService,
     private router: Router,
     ) { }
 
@@ -35,18 +31,8 @@ export class HeaderComponent implements OnInit {
   }
 
   public logOut(): void {
-    this.subs.add(
-      this.authService.logout('qaz@qaz.com')
-        .subscribe(
-          (res: IAuthResponse) => {
-            if (res.status) {
-              this.authService.removeAdminToken();
-              this.router.navigate([Constants.ROUTERS.LOGIN]);
-            }
-          },
-          (err: HttpErrorResponse) => this.translateToastrService.errorMsg(err.error.message),
-      ),
-    );
+    this.authService.removeAdminToken();
+    this.router.navigate([Constants.ROUTERS.LOGIN]);
   }
 
 }
