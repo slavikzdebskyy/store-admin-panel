@@ -17,7 +17,7 @@
     </div>
     <admin-side-nav [isSideNavOpened]="isSideNavOpened"></admin-side-nav>
   </mat-drawer>
-  <mat-drawer-content class="content" [class.small]="isSideNavOpened">
+  <mat-drawer-content class="content">
     <admin-header
       (sideNavEmit)="toggleSideBar($event)"
     >
