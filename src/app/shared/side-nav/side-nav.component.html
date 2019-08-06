@@ -68,14 +68,53 @@
     <li
       class="side-nav-item list-item"
       [class.side-nav-item--center]="!isSideNavOpened"
-      [routerLink]="['', constants.ROUTERS.USERS]"
+      [routerLink]="['', constants.ROUTERS.MESSAGES]"
+      routerLinkActive="active"
+    >
+      <span class="icon" [class.icon--padding]="!isSideNavOpened">
+        <i class="fa fa-envelope" aria-hidden="true"></i>
+      </span>
+      <span *ngIf="isSideNavOpened">
+        {{ 'SIDE_NAV_LIST.messages' | translate }}
+      </span>
+    </li>
+    <li
+      class="side-nav-item list-item"
+      [class.side-nav-item--center]="!isSideNavOpened"
+      [routerLink]="['', constants.ROUTERS.FEEDBACKS]"
+      routerLinkActive="active"
+    >
+      <span class="icon" [class.icon--padding]="!isSideNavOpened">
+        <i class="fa fa-comments" aria-hidden="true"></i>
+      </span>
+      <span *ngIf="isSideNavOpened">
+        {{ 'SIDE_NAV_LIST.feedbacks' | translate }}
+      </span>
+    </li>
+    <li
+      class="side-nav-item list-item"
+      [class.side-nav-item--center]="!isSideNavOpened"
+      [routerLink]="['', constants.ROUTERS.CUSTOMERS]"
       routerLinkActive="active"
     >
       <span class="icon" [class.icon--padding]="!isSideNavOpened">
         <i class="fa fa-users" aria-hidden="true"></i>
       </span>
       <span *ngIf="isSideNavOpened">
-        {{ 'SIDE_NAV_LIST.users' | translate }}
+        {{ 'SIDE_NAV_LIST.customers' | translate }}
+      </span>
+    </li>
+    <li
+      class="side-nav-item list-item"
+      [class.side-nav-item--center]="!isSideNavOpened"
+      [routerLink]="['', constants.ROUTERS.ADMINS]"
+      routerLinkActive="active"
+    >
+      <span class="icon" [class.icon--padding]="!isSideNavOpened">
+        <i class="fa fa-users-cog" aria-hidden="true"></i>
+      </span>
+      <span *ngIf="isSideNavOpened">
+        {{ 'SIDE_NAV_LIST.admins' | translate }}
       </span>
     </li>
   </ul>

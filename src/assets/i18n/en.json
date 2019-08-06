@@ -19,7 +19,10 @@
     "edit_product": "Edit product",
     "orders": "Orders",
     "configure": "Configure",
-    "users": "Users"
+    "admins": "Administrators",
+    "customers": "Customers",
+    "messages": "Messages",
+    "feedbacks": "Feedbacks"
   },
 
   "ERRORS_MSG": {

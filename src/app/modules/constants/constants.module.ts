@@ -24,7 +24,10 @@ export class Constants {
     EDIT_PRODUCT: 'edit_product',
     ORDERS: 'orders',
     CONFIGURE: 'configure',
-    USERS: 'users',
+    ADMINS: 'admins',
+    CUSTOMERS: 'customers',
+    MESSAGES: 'messages',
+    FEEDBACKS: 'feedbacks',
   };
 
   public static readonly ROUTERS_API = {

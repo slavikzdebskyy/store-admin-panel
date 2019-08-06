@@ -18,6 +18,9 @@ import { EditProductComponent } from './edit-product/edit-product.component';
 import { OrdersComponent } from './orders/orders.component';
 import { ConfigureComponent } from './configure/configure.component';
 import { UsersComponent } from './users/users.component';
+import { CustomersComponent } from './customers/customers.component';
+import { FeedbacksComponent } from './feedbacks/feedbacks.component';
+import { MessagesComponent } from './messages/messages.component';
 
 const COMPONENTS = [
   HeaderComponent,
@@ -43,6 +46,9 @@ const COMPONENTS = [
   ],
   declarations: [
     ...COMPONENTS,
+    CustomersComponent,
+    FeedbacksComponent,
+    MessagesComponent,
   ],
 
 })
