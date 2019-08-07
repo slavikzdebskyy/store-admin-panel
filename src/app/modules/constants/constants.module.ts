@@ -28,6 +28,8 @@ export class Constants {
     CUSTOMERS: 'customers',
     MESSAGES: 'messages',
     FEEDBACKS: 'feedbacks',
+    RESETORE_PSWRD: 'restore-password',
+    AUTH: 'auth',
   };
 
   public static readonly ROUTERS_API = {

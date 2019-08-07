@@ -67,4 +67,8 @@ export class LoginComponent implements OnDestroy {
       );
     }
   }
+
+  public toRestorePassword(): void {
+    this.router.navigate([Constants.ROUTERS.AUTH, Constants.ROUTERS.RESETORE_PSWRD]);
+  }
 }

@@ -18,7 +18,7 @@ export class AuthGuard implements CanActivate {
       return true;
     }
     localStorage.removeItem(Constants.STORAGE_KEYS.ADMIN_KEY);
-    this.router.navigate([Constants.ROUTERS.LOGIN], { replaceUrl: true });
+    this.router.navigate([Constants.ROUTERS.AUTH], { replaceUrl: true });
     return false;
   }
 
