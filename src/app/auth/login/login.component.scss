@@ -63,3 +63,22 @@
   }
 
 }
+
+::ng-deep .mat-form-field-label {
+  color: $color-main-1 !important;
+ }
+
+ ::ng-deep.mat-form-field-underline {
+  background-color: $color-main-1 !important;
+}
+
+::ng-deep.mat-form-field-ripple {
+ background-color: $color-main-1 !important;;
+}
+
+.forgot-btn {
+  color: $color-main-5;
+  &:hover {
+    background: none;
+  }
+}

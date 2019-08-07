@@ -12,8 +12,9 @@
         </h3>
       </div>
       <div class="inputs">
-        <mat-form-field  class="form-field" color="accent">
+        <mat-form-field  class="form-field">
           <input
+          autocomplete="off"
           matInput
           (keydown.enter)="onLogin()"
           type="email"
@@ -47,9 +48,7 @@
       </div>
     </div>
     <div class="row-spc-btwn-cntr btn-container">
-        <button
-          mat-button
-          color="accent">
+        <button mat-button class="forgot-btn">
           {{ 'LOGIN.forgot_pswrd' | translate }}
         </button>
         <button
