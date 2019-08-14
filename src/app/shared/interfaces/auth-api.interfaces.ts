@@ -7,4 +7,5 @@ export interface IAuthResponse {
   status: boolean;
   message?: string;
   token?: string;
+  error?: object;
 }

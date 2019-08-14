@@ -14,7 +14,7 @@ const routes: Routes = [
     loadChildren: './dashboard/dashboard.module#DashboardModule',
   },
   {
-    path: Constants.ROUTERS.LOGIN,
+    path: Constants.ROUTERS.AUTH,
     loadChildren: './auth/auth.module#AuthModule',
   },
   {

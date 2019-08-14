@@ -48,7 +48,11 @@
       </div>
     </div>
     <div class="row-spc-btwn-cntr btn-container">
-        <button mat-button class="forgot-btn">
+        <button
+          mat-button
+          class="forgot-btn"
+          (click)="toRestorePassword()"
+        >
           {{ 'LOGIN.forgot_pswrd' | translate }}
         </button>
         <button

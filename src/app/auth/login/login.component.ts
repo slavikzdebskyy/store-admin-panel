@@ -2,13 +2,13 @@ import { Component, OnDestroy, Self } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 
-// rxjs
+  // rxjs
 import { Subscription } from 'rxjs';
 
-// constants
+  // constants
 import { Constants } from 'src/app/modules/constants/constants.module';
 
-// services
+  // services
 import { SpinnerService } from './../../shared/services/spinner.service';
 import { TranslateToastrService } from 'src/app/services/translate-toastr.service';
 import { AuthService } from 'src/app/services/auth.service';
@@ -66,5 +66,9 @@ export class LoginComponent implements OnDestroy {
           ),
       );
     }
+  }
+
+  public toRestorePassword(): void {
+    this.router.navigate([Constants.ROUTERS.AUTH, Constants.ROUTERS.RESETORE_PSWRD]);
   }
 }

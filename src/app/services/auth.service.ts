@@ -15,11 +15,17 @@ export class AuthService {
   constructor(private httpClient: HttpClient) {}
 
   public login(body: ILoginRequest): Observable<IAuthResponse> {
-    return this.httpClient.post<IAuthResponse>(`${this.serverApiUrl}${Constants.ROUTERS_API.ADMIN.LOGIN}`, body);
+    return this.httpClient.post<IAuthResponse>(
+      `${this.serverApiUrl}${Constants.ROUTERS_API.ADMIN.LOGIN}`,
+      body,
+    );
   }
 
   public logout(email: string): Observable<IAuthResponse> {
-    return this.httpClient.post<IAuthResponse>(`${this.serverApiUrl}${Constants.ROUTERS_API.ADMIN.LOGOUT}`, { email });
+    return this.httpClient.post<IAuthResponse>(
+      `${this.serverApiUrl}${Constants.ROUTERS_API.ADMIN.LOGOUT}`,
+      { email },
+    );
   }
 
   public get adminToken(): string {
@@ -32,6 +38,27 @@ export class AuthService {
 
   public removeAdminToken() {
     localStorage.removeItem(this.adminStoreKey);
+  }
+
+  public sendSecurityCode(email: string): Observable<IAuthResponse> {
+    return this.httpClient.post<IAuthResponse>(
+      `${this.serverApiUrl}${Constants.ROUTERS_API.ADMIN.SEND_SECUTITY_CODE}`,
+      { email },
+    );
+  }
+
+  public checkSecurityCode(code: string, email: string): Observable<IAuthResponse> {
+    return this.httpClient.post<IAuthResponse>(
+      `${this.serverApiUrl}${Constants.ROUTERS_API.ADMIN.CHECK_CODE}`,
+      { email, code },
+    );
+  }
+
+  public changePassword(email: string, password: string, passwordConfirm: string) {
+    return this.httpClient.patch<IAuthResponse>(
+      `${this.serverApiUrl}${Constants.ROUTERS_API.ADMIN.CHANGE_PASSWORD}`,
+      { email, password, passwordConfirm },
+    );
   }
 
 }
