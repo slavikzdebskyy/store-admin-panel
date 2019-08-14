@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 export class Constants {
 
   public static readonly MIN_PASSWORD_LENGTH = 6;
+  public static readonly SECURITY_CODE_LENGTH = 6;
 
   public static readonly LANGUAGES = {
     DEAFAULT: 'en',
@@ -36,6 +37,9 @@ export class Constants {
     ADMIN: {
       LOGIN: '/administrators/login-admin',
       LOGOUT: '/administrators/logout-admin',
+      SEND_SECUTITY_CODE: '/administrators/restore-password',
+      CHECK_CODE: '/administrators/check-security-code',
+      CHANGE_PASSWORD: '/administrators/change-password',
     },
   };
 

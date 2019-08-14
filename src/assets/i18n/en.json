@@ -13,6 +13,17 @@
     "login": "Login"
   },
 
+  "RESTORE_PSWRDs": {
+    "restore_pswrd": "Restore password",
+    "security_code": "Security code",
+    "enter_security_code": "Security code should contain at least {{ value }} characters ",
+    "send": "Send",
+    "password_confirm": "Confirm Password",
+    "chacnge_password": "Change Password",
+    "password_min_len_error": "Password should contain at least {{ value }} characters ",
+    "passwords_not_equal": "Passwords not equal"
+  },
+
   "SIDE_NAV_LIST": {
     "products": "Products",
     "add_product": "Add new product",
