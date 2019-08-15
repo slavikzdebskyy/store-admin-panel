@@ -11,6 +11,7 @@ export class Constants {
 
   public static readonly MIN_PASSWORD_LENGTH = 6;
   public static readonly SECURITY_CODE_LENGTH = 6;
+  public static readonly DEFAULT_AVATAR_URL = '/images/image/2ec9775925de0d1a288d741f18e4c347.jpg';
 
   public static readonly LANGUAGES = {
     DEAFAULT: 'en',
@@ -44,7 +45,8 @@ export class Constants {
   };
 
   public static readonly STORAGE_KEYS = {
-    ADMIN_KEY: 'admin_token',
+    ADMIN_TOKEN_KEY: 'admin_token',
+    ADMIN_DATA_KEY: 'admin_data',
   };
 
 }

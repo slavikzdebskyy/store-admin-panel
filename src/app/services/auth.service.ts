@@ -10,7 +10,7 @@ import { environment } from './../../environments/environment';
 export class AuthService {
 
   private serverApiUrl: string = environment.serverApiUrl;
-  private adminStoreKey: string = Constants.STORAGE_KEYS.ADMIN_KEY;
+  private adminStoreKey: string = Constants.STORAGE_KEYS.ADMIN_TOKEN_KEY;
 
   constructor(private httpClient: HttpClient) {}
 
