@@ -1,28 +1,29 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
 
 import { Constants } from '../../../modules/constants/constants.module';
+import { Admin } from 'src/app/shared/interfaces/admin.interface';
+import { environment } from './../../../../environments/environment';
 
 @Component({
   selector: 'admin-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
   @Output() sideNavEmit = new EventEmitter<boolean>();
 
-  private isSideBarOpen = true;
-  private subs = new Subscription();
+  private isSideBarOpen: boolean;
+  private admin: Admin;
 
   constructor(
     private authService: AuthService,
     private router: Router,
-    ) { }
-
-  ngOnInit() {
+    ) {
+    this.isSideBarOpen = true;
+    this.admin = JSON.parse(localStorage.getItem(Constants.STORAGE_KEYS.ADMIN_DATA_KEY) || '');
   }
 
   public toggleSideNav(): void {
@@ -32,7 +33,13 @@ export class HeaderComponent implements OnInit {
 
   public logOut(): void {
     this.authService.removeAdminToken();
-    this.router.navigate([Constants.ROUTERS.LOGIN]);
+    this.router.navigate([Constants.ROUTERS.AUTH, Constants.ROUTERS.LOGIN]);
+  }
+
+  public get avatarUrl(): string {
+    return this.admin &&  this.admin.avatar ?
+    `${environment.serverApiUrl}${this.admin.avatar}` :
+    `${environment.serverApiUrl}${Constants.DEFAULT_AVATAR_URL}`;
   }
 
 }

@@ -55,7 +55,14 @@ export class LoginComponent implements OnDestroy {
             (res) => {
               this.spinner.hide();
 
-              localStorage.setItem(this.constants.STORAGE_KEYS.ADMIN_KEY, res.token || '');
+              localStorage.setItem(
+                this.constants.STORAGE_KEYS.ADMIN_TOKEN_KEY,
+                res.token || '',
+                );
+              localStorage.setItem(
+                this.constants.STORAGE_KEYS.ADMIN_DATA_KEY,
+                JSON.stringify(res.data) || '',
+                );
               this.router.navigate([Constants.ROUTERS.HOME]);
             },
             (err) => {
