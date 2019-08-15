@@ -23,7 +23,8 @@ export class HeaderComponent {
     private router: Router,
     ) {
     this.isSideBarOpen = true;
-    this.admin = JSON.parse(localStorage.getItem(Constants.STORAGE_KEYS.ADMIN_DATA_KEY) || '');
+    const adminString = localStorage.getItem(Constants.STORAGE_KEYS.ADMIN_DATA_KEY);
+    this.admin = adminString ? JSON.parse(adminString) : null;
   }
 
   public toggleSideNav(): void {
