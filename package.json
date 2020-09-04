@@ -44,7 +44,7 @@
     "graphql-tag": "^2.10.1",
     "hammerjs": "^2.0.8",
     "ngx-toastr": "^10.0.4",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "rxjs": "~6.2.0",
     "tslint-angular": "^3.0.2",
     "zone.js": "~0.8.26"
